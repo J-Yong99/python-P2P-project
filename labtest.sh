@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # input
-rm -f a.out *.JPG hw3 c??.sh r?.txt wccnt.txt
+rm -f a.out *.JPG P2P c??.sh r?.txt wccnt.txt
 #TIMEOUT="timeout 60"
 TIMEOUT=""
 sleep 1
@@ -89,7 +89,7 @@ elif [[ $src =~ ".java" ]];
 then
 	javac $src
 	sleep 1
-	cname=$(ls HW3*.class | sed 's/.class//')
+	cname=$(ls P2P*.class | sed 's/.class//')
 	for kk in {0..4}
 	do
 		bash c${ids[$kk]}.sh | $TIMEOUT java $cname ${ports[$kk]} ${ids[$kk]} ${names[$kk]} > r$kk.txt&
@@ -133,6 +133,6 @@ wccnt=($(grep -v 0 wc.txt | grep -v 1))
 # show the result
 echo "Result:" ${succcnt[0]} $wccnt $src
 
-#rm -f hw3 c??.sh r?.txt ??.sh
+#rm -f P2P c??.sh r?.txt ??.sh
 
 
